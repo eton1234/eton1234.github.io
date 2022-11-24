@@ -46,40 +46,125 @@ div {
 p {
     font-size: 20px;
 }
-
-  /* Modal Content/Box */
-  .modal {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(1,1);
-    transition: visibility 0s linear 0.25s, opacity 0.25s, transform 0.25s;
-  }
-  .modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 1rem, 1.5rem;
-    width: 24rem;
-    border-radius: 0.5rem;
-  }
-  .close-button {
-    float: right;
-    width: 1.5rem;
-    line-height: 1.5rem;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 0.25rem;
-    background-color: lightgray;
-  }
-  .close-button-hover {
-    background-color: darkgrey;
+/* modallss */
+body {
+    background-color: #f4f4f4;
   }
   
+  .cards {
+    padding: 1em;
+    font-family: sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 1fr 1fr 1fr;
+    grid-gap: 1em;
+  }
+  .cards .details {
+    display: none;
+  }
+  .cards > a {
+    text-decoration: none;
+    color: currentcolor;
+    border-radius: 0.5em;
+    box-shadow: 0 0.1em 0.35em rgba(0, 0, 0, 0.05);
+    padding: 1em;
+    background-color: white;
+  }
+  .cards > a:last-child {
+    display: none;
+    opacity: 0;
+  }
+  
+  @keyframes stageset {
+    0% {
+      opacity: 0;
+      z-index: 1;
+    }
+  }
+  .cards :target ~ [href="#"] {
+    display: block;
+    opacity: 1;
+  }
+  
+  .cards :target ~ [href="#"]:before {
+    content: "sdfsfsdf";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+    bottom: 0;
+    background-color: currentcolor;
+    opacity: 0.3;
+    display: block;
+  }
+  
+  .cards :target {
+    padding: 1em 3em;
+    border-radius: 2em;
+    box-shadow: 0 0.5em 3em rgba(0, 0, 0, 0.5);
+    animation: pop 0.4s cubic-bezier(0.4, 0.1, 0.3, 1);
+    display: block;
+    position: fixed;
+    top: 3em;
+    left: 3em;
+    right: 3em;
+    bottom: 3em;
+    z-index: 9;
+  }
+  .cards :target .details {
+    display: block;
+  }
+  .cards :target h1 {
+    font-size: 3em;
+  }
+  
+  @keyframes pop {
+    0% {
+      transform: scale(0.98);
+    }
+  }
+  @media (max-width: 50em) {
+    .cards {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 30em) {
+    .cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  .cards a[href="#"]:after {
+    content: "+";
+    transform: rotate(45deg);
+    cursor: pointer;
+    position: absolute;
+    text-align: center;
+    line-height: 3em;
+    display: block;
+    top: 3.5em;
+    right: 3.5em;
+    z-index: 12;
+    width: 3em;
+    height: 3em;
+    box-shadow: 0 0 0 0.1em rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+  }
+  
+  .cards a[href="#"]:after {
+    opacity: 0;
+  }
+  
+  .cards :target ~ a[href="#"]:after {
+    opacity: 0.5;
+    animation: fadein 0.5s linear;
+  }
+  
+  @keyframes fadein {
+    0%, 20% {
+      opacity: 0;
+    }
+  }
+  .cards > :hover:not(:target) {
+    box-shadow: 0 0 2em rgba(0, 0, 0, 0.15);
+  }
