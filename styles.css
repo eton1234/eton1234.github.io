@@ -1,180 +1,239 @@
 main .page-wrapper {
   background-color: #AC92D4;
-    background: linear-gradient(6.77deg, #AC92D4 -62.1%, #C5A2DB 4.93%, rgba(179, 160, 234, 0.572107) 32.21%, rgba(154, 158, 255, 0) 125.36%, #EFBBE8 125.38%), #FAFCFF;
+  background: linear-gradient(6.77deg, #AC92D4 -62.1%, #C5A2DB 4.93%, rgba(179, 160, 234, 0.572107) 32.21%, rgba(154, 158, 255, 0) 125.36%, #EFBBE8 125.38%), #FAFCFF;
+}
+h1 h2 h3 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  color: rgba(53, 57, 169, 0.748);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* About page intro  */
+#intro {
+  display: inline-block;
 }
 
+#intro p {
+  text-align: left;
+  margin-top: 0px;
+}
+
+#profile-image {
+  float: right;
+  text-align: left;
+  padding: 0 20px 20px 0;
+  margin-left: 100px;
+}
+.thumbnail {
+  width: auto;
+  max-width: 300px;
+  height: auto;
+  max-height: 300px;
+  object-fit: fill;
+  overflow: hidden;
+}
+.details {
+  text-align: left;
+}
+/* nav component css */
 nav.top-nav {
   background-color: #AC92D4;
 
-    background: linear-gradient(6.77deg, #AC92D4 -62.1%, #C5A2DB 4.93%, rgba(179, 160, 234, 0.572107) 32.21%, rgba(154, 158, 255, 0) 125.36%, #EFBBE8 125.38%), #FAFCFF;
-    position: fixed;
-    top: 0px; 
-    right: 0px;
-    left: 0px;
+  background: linear-gradient(6.77deg, #AC92D4 -62.1%, #C5A2DB 4.93%, rgba(179, 160, 234, 0.572107) 32.21%, rgba(154, 158, 255, 0) 125.36%, #EFBBE8 125.38%), #FAFCFF;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
 
-      /* color: black;
+  /* color: black;
       border-bottom: .25em solid;  */
 }
-nav [aria-current=page]{
-    background-color: white;
-    color:black;
-    border-bottom: .25cm solid; 
+
+nav [aria-current=page] {
+  background-color: white;
+  color: black;
+  border-bottom: .25cm solid;
 }
+
+
 main {
-    margin-top: 100px;
-    margin-left: 2cm;
+  margin-top: 100px;
+  /* margin-left: 2cm; */
 }
-nav.top-nav li{
-    display: inline-block;
-    font-family: sans-serif;
-    font-weight: bold;
-    margin: 5px;
-    user-select: none;
+
+nav.top-nav li {
+  display: inline-block;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin: 5px;
+  user-select: none;
 }
-nav.top-nav li:hover{
-    text-decoration: underline;
+
+nav.top-nav li:hover {
+  text-decoration: underline;
 }
-nav.top-nav ul{
-    list-style: none;
+
+nav.top-nav ul {
+  list-style: none;
 }
+
 nav.top-nav .pulldown-menu {
-    display: none;
-    position: absolute;
-    border: 1px solid white;
-    background-color: white;
+  display: none;
+  position: absolute;
+  border: 1px solid white;
+  background-color: white;
 }
+
 nav.top-nav li:hover .pulldown-menu {
-    display:block;
+  display: block;
 }
 
 div {
-    text-align: center;
+  text-align: center;
 }
+
 p {
-    font-size: 20px;
+  font-size: 20px;
 }
+
 /* modallss */
 body {
-    background-color: #f4f4f4;
+  background-color: #f4f4f4;
+}
+
+.cards {
+  padding: 1em;
+  font-family: sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 1fr 1fr 1fr;
+  grid-gap: 1em;
+}
+
+.cards .thumbnail {
+  border-radius: 1em;
+}
+
+.cards .details {
+  display: none;
+}
+
+.cards>a {
+  text-decoration: none;
+  color: currentcolor;
+  border-radius: 0.5em;
+  box-shadow: 0 0.1em 0.35em rgba(0, 0, 0, 0.05);
+  padding: 1em;
+  background-color: white;
+}
+
+.cards>a:last-child {
+  display: none;
+  opacity: 0;
+}
+
+@keyframes stageset {
+  0% {
+    opacity: 0;
+    z-index: 1;
   }
-  
+}
+
+.cards :target~[href="#"] {
+  display: block;
+  opacity: 1;
+}
+
+.cards :target~[href="#"]:before {
+  content: "sdfsfsdf";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-radius: 0;
+  bottom: 0;
+  background-color: currentcolor;
+  opacity: 0.3;
+  display: block;
+}
+
+
+.cards :target {
+  padding: 1em 3em;
+  border-radius: 2em;
+  box-shadow: 0 0.5em 3em rgba(0, 0, 0, 0.5);
+  animation: pop 0.4s cubic-bezier(0.4, 0.1, 0.3, 1);
+  display: block;
+  position: fixed;
+  top: 3em;
+  left: 3em;
+  right: 3em;
+  bottom: 3em;
+  z-index: 9;
+}
+
+.cards :target .details {
+  display: block;
+}
+
+.cards :target h1 {
+  font-size: 3em;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.98);
+  }
+}
+
+@media (max-width: 50em) {
   .cards {
-    padding: 1em;
-    font-family: sans-serif;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-rows: 1fr 1fr 1fr;
-    grid-gap: 1em;
+    grid-template-columns: 1fr 1fr;
   }
-  .cards .thumbnail {
-    border-radius: 1em;
+}
+
+@media (max-width: 30em) {
+  .cards {
+    grid-template-columns: 1fr;
   }
-  .cards .details {
-    display: none;
-  }
-  .cards > a {
-    text-decoration: none;
-    color: currentcolor;
-    border-radius: 0.5em;
-    box-shadow: 0 0.1em 0.35em rgba(0, 0, 0, 0.05);
-    padding: 1em;
-    background-color: white;
-  }
-  .cards > a:last-child {
-    display: none;
+}
+
+.cards a[href="#"]:after {
+  content: "+";
+  transform: rotate(45deg);
+  cursor: pointer;
+  position: absolute;
+  text-align: center;
+  line-height: 3em;
+  display: block;
+  top: 3.5em;
+  right: 3.5em;
+  z-index: 12;
+  width: 3em;
+  height: 3em;
+  box-shadow: 0 0 0 0.1em rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+}
+
+.cards a[href="#"]:after {
+  opacity: 0;
+}
+
+.cards :target~a[href="#"]:after {
+  opacity: 0.5;
+  animation: fadein 0.5s linear;
+}
+
+@keyframes fadein {
+
+  0%,
+  20% {
     opacity: 0;
   }
-  
-  @keyframes stageset {
-    0% {
-      opacity: 0;
-      z-index: 1;
-    }
-  }
-  .cards :target ~ [href="#"] {
-    display: block;
-    opacity: 1;
-  }
-  
-  .cards :target ~ [href="#"]:before {
-    content: "sdfsfsdf";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    border-radius: 0;
-    bottom: 0;
-    background-color: currentcolor;
-    opacity: 0.3;
-    display: block;
-  }
-  
-  .cards :target {
-    padding: 1em 3em;
-    border-radius: 2em;
-    box-shadow: 0 0.5em 3em rgba(0, 0, 0, 0.5);
-    animation: pop 0.4s cubic-bezier(0.4, 0.1, 0.3, 1);
-    display: block;
-    position: fixed;
-    top: 3em;
-    left: 3em;
-    right: 3em;
-    bottom: 3em;
-    z-index: 9;
-  }
-  .cards :target .details {
-    display: block;
-  }
-  .cards :target h1 {
-    font-size: 3em;
-  }
-  
-  @keyframes pop {
-    0% {
-      transform: scale(0.98);
-    }
-  }
-  @media (max-width: 50em) {
-    .cards {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-  @media (max-width: 30em) {
-    .cards {
-      grid-template-columns: 1fr;
-    }
-  }
-  .cards a[href="#"]:after {
-    content: "+";
-    transform: rotate(45deg);
-    cursor: pointer;
-    position: absolute;
-    text-align: center;
-    line-height: 3em;
-    display: block;
-    top: 3.5em;
-    right: 3.5em;
-    z-index: 12;
-    width: 3em;
-    height: 3em;
-    box-shadow: 0 0 0 0.1em rgba(0, 0, 0, 0.3);
-    border-radius: 50%;
-  }
-  
-  .cards a[href="#"]:after {
-    opacity: 0;
-  }
-  
-  .cards :target ~ a[href="#"]:after {
-    opacity: 0.5;
-    animation: fadein 0.5s linear;
-  }
-  
-  @keyframes fadein {
-    0%, 20% {
-      opacity: 0;
-    }
-  }
-  .cards > :hover:not(:target) {
-    box-shadow: 0 0 2em rgba(0, 0, 0, 0.15);
-  }
+}
+
+.cards> :hover:not(:target) {
+  box-shadow: 0 0 2em rgba(0, 0, 0, 0.15);
+}

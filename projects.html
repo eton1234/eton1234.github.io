@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Fixed Nav bar</title>
+    <script src="./components/nav.js"> </script>
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+</head>
+
+
+
+<body>
+    <nav-component></nav-component>
+    <main class="page-wrapper">
+        <h1> Projects </h1>
+
+        <!-- Trigger/Open The Modal -->
+        <section class="cards">
+            <a href="#one" id="one">
+                <div>
+                    <h1> Kan books </h1>
+                    <img class="thumbnail" src="./assets/kanbooks.gif" width=200px height=400px
+                        alt="Link to kanbooks project">
+                </div>
+
+                <div class="details">
+                    <ul> <li>Trying to read in a foreign language like Chinese is a tough task.
+                        Besides memorizing the thousands of characters that exist, it is a confusing task to figure out which characters in a sequence
+                        make up a word: Chinese words can be composed of 1-4 characters, making it ambiguous to tell when a word starts and ends.. </li>
+                        <li>
+                        To circumvent these struggles, the Kanbooks IOS E-reader prototype automatically tokenizes page content by word, highlights
+                        unknown words for faster identification, and provides on the fly translation and pinyin
+                        romanizations for each word token. </li>
+                        <li>
+                        Kanbooks was built using the Readium framework to render EPUBs, Swift's NLP library, and
+                        GoogleTranslate's API </li> </ul>
+                </div>
+            </a>
+
+            <a href="#two" id="two">
+                <div>
+                    <h1> NUDM Mobile </h1>
+                    <img class="thumbnail" src="./assets/Leaderboard Hi-Fi.png" width=200px height=400px
+                        alt="Link to kanbooks project">
+                </div>
+
+                <div class="details">
+                    <p> With NUDM, I'm developing a client facing mobile app which serves thousands of students. The app
+                        mainly involves an event management interface as well as a fundraising leaderboard.
+                        We are working with React Native and Firebase in an agile environment </p>
+                </div>
+            </a>
+            <a href="#seven" id="seven">
+                <div>
+                    <h1> Nautilus Kernel Drivers </h1>
+                    <img class="thumbnail" src="./assets/nautilus.png" width=700 height=150
+                        alt="Link to kanbooks project">
+                </div>
+
+                <div class="details">
+                        <p> Devised request and response fragments to load pixels into a framebuffer for a DMA GPU device
+                            Developed middle layer bit blitting functions to apply operations from source to destination boxes with enforced clipping regions and tiling; Implemented functions to draw pixels, lines, and polygons
+                            Interfaced with port mapped IO to develop a parallel port driver and wrote an interrupt handler to signal other requests                            
+                    </p>
+                </div>
+            </a>
+            
+
+            <a href="#four" id="four">
+                <div>
+                    <h1> iPod Player UI </h1>
+                    <img class="thumbnail" src="./assets/ipod-ui.png" width=200px height=400px
+                        alt="Link to kanbooks project">
+                </div>
+
+                <div class="details">
+                    <p> I incorporated W3C WCAG accessibility guidelines into my HTML/CSS formatting and JavaScript code
+                        to create an accessibility focused iPod player. Front-end only
+                    </p>
+                </div>
+            </a>
+
+            <a href="#five" id="five">
+                <div>
+                    <h1> Big Marsh Air Quality Sensors</h1>
+                    <img class="thumbnail" src="./assets/airnote-enclosure-3d-printed.png" width=276 height=205
+                        alt="Link to kanbooks project">
+                </div>
+
+                <div class="details">
+                        <img >
+                        <p> Recommended the best air quality sensor for Big Marsh Park, an outdoor park with spotty Wi-Fi access. Provided a 
+                        3D modeled waterproof enclosure and a plan to implement the sensors throughout the park.
+                    </p>
+                </div>
+            </a>
+            <a href="#three" id="three">
+                <div>
+                    <h1> Flapy Bird </h1>
+                </div>
+
+                <div class="details">
+                    <p>Programmed Flappy Bird from scratch in C++ with GE211, a simple 2D game engine. Complete with
+                        score tracking, random column generation and lives. Follows MVC model </p>
+                </div>
+            </a>
+
+            <a href="#six" id="six">
+                <div>
+                    <h1> Chess </h1>
+                    <img class="thumbnail" src="assets/chess.png" width=400px height=400px
+                        alt="Link to kanbooks project">
+                </div>
+
+                <div class="details">
+                    <p> I designed a fully functional Chess GUI in highschool using object oriented principles.
+                    </p>
+                </div>
+            </a>
+
+
+            <a href="#" class="dismiss"></a>
+        </section>
+</body>
+</html>

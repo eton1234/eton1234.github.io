@@ -5,10 +5,9 @@ navTemplate.innerHTML = `
 <nav role=navigation class="top-nav">
     <ul>
         <li nav aria-current-page tabindex=0> <a href = "index.html"> Home</a></li>
-        <li tabindex=1>  <a href = "about-me.html">About me</a> </li>
+        <li tabindex=1>  <a href = "projects.html">Projects</a> </li>
         <li tabindex=2> <a href = "./assets/resume.pdf">Resume</a> </li>
-
-        <li tabindex=4> <a href="about-me.html#contact-info"> Contact Info </a> </li>
+        <li tabindex=4> <a href="index.html#contact-info"> Contact Info </a> </li>
     </ul>
 </nav>
 `
