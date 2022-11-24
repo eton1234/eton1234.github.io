@@ -1,12 +1,19 @@
+main .page-wrapper {
+  background-color: #AC92D4;
+    background: linear-gradient(6.77deg, #AC92D4 -62.1%, #C5A2DB 4.93%, rgba(179, 160, 234, 0.572107) 32.21%, rgba(154, 158, 255, 0) 125.36%, #EFBBE8 125.38%), #FAFCFF;
+}
+
 nav.top-nav {
-    background-color: brown;
+  background-color: #AC92D4;
+
+    background: linear-gradient(6.77deg, #AC92D4 -62.1%, #C5A2DB 4.93%, rgba(179, 160, 234, 0.572107) 32.21%, rgba(154, 158, 255, 0) 125.36%, #EFBBE8 125.38%), #FAFCFF;
     position: fixed;
     top: 0px; 
     right: 0px;
     left: 0px;
-    box-shadow: 0 4px 4px;
-    color: black;
-    border-bottom: .25em solid; 
+
+      /* color: black;
+      border-bottom: .25em solid;  */
 }
 nav [aria-current=page]{
     background-color: white;
@@ -58,6 +65,9 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     grid-auto-rows: 1fr 1fr 1fr;
     grid-gap: 1em;
+  }
+  .cards .thumbnail {
+    border-radius: 1em;
   }
   .cards .details {
     display: none;

@@ -5,14 +5,27 @@
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Fixed Nav bar</title>
     <script src="./components/nav.js"> </script>
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
 <body>
     <nav-component> </nav-component>
-    <main>
+    <main class="page-wrapper">
         <div>
         <img src="./assets/ethan.jpeg" width=400px height=400px> 
     </div>
-        <h1> Hi, Ethan here!  </h1>
+        <h1> Hi, Ethan here!  </h1> 
+        <pre><code>import Welcome
+
+            class NUFT:
+            
+               def __init__(self, devs, traders, researchers):
+                   self.devs = devs
+                self.traders = traders
+                   self.researchers = researchers
+            
+               def our_Stack(self):
+                   return ["Python", "C++", "TypeScript", "Tailwind", "Kotlin", "Carbon", "React", "AWS", ...]
+                                        </code></pre>
         <p> I'm a junior engineering student here at Northwestern University majoring in Computer Science with a minor in Data Science. I have a particular interest 
             in innovative EduTech software, and software that is user-centered at its core. I also have taken up an interested in systems, specifically
             in embedded systems programming, and OS level development. I feel like my journey in Software Engineering has just begun however,
@@ -33,7 +46,7 @@
                 </p>
 
             <h3>DAQ Team, <a href="https://northwesternformularacing.com/about-us/">Northwestern Formula Racing</a></h3>
-                <p>
+                <p> 
                     NU Formula Racing builds a car from scratch for competition in the collegiate Formula FSAE tournament.
                     I've had the opportunity to learn about embedded systems, different hardware protocols and the interface between software and hardware! 
                     Specifically, I wrote and tested ESP32 firmware (C++) which sends onboard GPS and IMU sensor data to the car's CAN bus at a periodic rate.
