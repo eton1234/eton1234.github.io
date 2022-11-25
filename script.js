@@ -1,17 +1,116 @@
-const modal = document.querySelector(".modal");
-const trigger = document.querySelector(".trigger");
-const closeButton = document.querySelector(".close-button");
 
-function toggleModal() {
-    modal.classicList.toggle("show-modal");
-}
 
-function windowOnClick(event) {
-    if (event.target === modal) {
-        toggleModal();
+var projects = [
+    {
+        title: "Kan Books",
+        description: `<ul> <li>Trying to read in a foreign language like Chinese is a tough task.
+            Besides memorizing the thousands of characters that exist, it is a confusing task to figure out which characters in a sequence
+            make up a word: Chinese words can be composed of 1-4 characters, making it ambiguous to tell when a word starts and ends.. </li>
+            <li>
+                To circumvent these struggles, the Kanbooks IOS E-reader prototype automatically tokenizes page content by word, highlights
+                unknown words for faster identification, and provides on the fly translation and pinyin
+                romanizations for each word token. </li>
+            <li>
+                Kanbooks was built using the Readium framework to render EPUBs, Swift's NLP library, and
+                GoogleTranslate's API </li> </ul>`,
+        image: 'image-kanbooks'
+    },
+    {
+        title: "NUDM Mobile",
+        description: `<p> With NUDM, I'm developing a client facing mobile app which serves thousands of students. The
+            app
+            mainly involves an event management interface as well as a fundraising leaderboard.
+            We are working with React Native and Firebase in an agile environment </p>`,
+        image: "image-nudm"
+
+    },
+    {
+        title: "Nautilus Kernel Drivers",
+        description:` <p> Devised request and response fragments to load pixels into a framebuffer for a DMA GPU device
+            Developed middle layer bit blitting functions to apply operations from source to destination boxes with enforced clipping regions and tiling; Implemented functions to draw pixels, lines, and polygons
+            Interfaced with port mapped IO to develop a parallel port driver and wrote an interrupt handler to signal other requests     </p>`,
+        image: "image-nautilus"
+    }, 
+    {
+        title: "iPod Player UI",
+        description: `<p> I incorporated W3C WCAG accessibility guidelines into my HTML/CSS formatting and JavaScript code
+        to create an accessibility focused iPod player. Front-end only
+    </p>`,
+        image: "image-ipod"
+    },
+    {
+        title: "Big Marsh Air Quality Sensors",
+        description: ` <p> Recommended the best air quality sensor for Big Marsh Park, an outdoor park with spotty Wi-Fi access. Provided a 
+        3D modeled waterproof enclosure and a plan to implement the sensors throughout the park.
+    </p>`,
+        image: "image-airnote"
+    },
+    {
+        title: "Flappy Bird ",
+        description: ` <p> Programmed Flappy Bird from scratch in C++ with GE211, a simple 2D game engine. Complete with
+        score tracking, random column generation and lives. Follows MVC model
+    </p>`,
+        image: null
+    },
+    {
+        title: "Chess",
+        description: `<p> I designed a fully functional Chess GUI in highschool using object oriented principles.
+                    </p>`,
+        image: "image-chess"
+    }
+
+
+
+]
+
+function createProjects(projects, parentSelector) {
+    let parent = document.querySelector(parentSelector);
+    if (parent) {
+        if (projects instanceof Array) {
+            for (let project of projects) {
+                image_link = project.image ? `card-img ${project.image}` : ""
+                html = `
+                    <div class= "${image_link}"></div>
+                    <div class="card-text">
+                    
+                        <h1> ${project.title} </h1>
+                       
+                        ${project.description}
+                        </div>
+                    </div> 
+                    `
+                let container = document.createElement("div");
+                container.className="card";
+                container.innerHTML = html;
+                container.tabIndex = projects.indexOf(project);
+                parent.append(container);
+            }
+        }
     }
 }
 
-trigger.addEventListener("click", toggleModal);
-closeButton.addEventListener("click", toggleModal);
-window.addEventListener("click",windowOnClick);
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.querySelector("btn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
