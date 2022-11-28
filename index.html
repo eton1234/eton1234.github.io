@@ -11,12 +11,13 @@
 
 
 <body>
+    <script src="script.js">navHighlight('.top-nav a', 'index.html', 'current');</script>
     <nav-component> </nav-component>
     <main class="page-wrapper">
   
         <h1> Hi, Ethan here! </h1>
-            <!-- <pre><code>import Welcome
-
+            <pre><code>import Welcome
+                
             class NUFT:
             
                def __init__(self, devs, traders, researchers):
@@ -25,9 +26,9 @@
                    self.researchers = researchers
             
                def our_Stack(self):
-                   return ["Python", "C++", "TypeScript", "Tailwind", "Kotlin", "Carbon", "React", "AWS", ...]
-                                        </code></pre> -->
-            <section id="intro">
+                   return ["Python", "C++", "TypeScript", "C", "Java", "React Native", "React", ...]
+                                        </code></pre>
+            <section aria-label="Bio" id="intro">
                 
                     <img id="profile-image" src="./assets/ethan.jpeg" width=400px height=400px>
                 
@@ -46,15 +47,16 @@
                     Recently I installed linux so I have been having fun with that :)
                 </p>
             </section>
-            <section id="activities"> 
-                <h1> Activities </h1>
+
+            <h1 id="activities"> Activities </h1>
+            <section aria-labelledby="activities"> 
+               
                 <h2> Research Assistant, <a href="https://tiilt.northwestern.edu/" target="_blank">TIILT Lab</a></h2>
                 <p>At the TIILT lab, I am designing a web application with the end goal of teaching music theory in a more
                     interactive and accessible way.
                     I've been researching rhythm identification with the librosa and madmom Python libraries. I've also
                     conducted
                     expert interviews and user research as part of our user-centered design process.</p>
-                <h2> Northwestern Dance Marathon (<a href="https://www.nudm.org/" target="_blank">NUDM</a>) Tech and
                     Analytics Team</h2>
                 <p>
                     With NUDM, I'm developing a client facing mobile app which serves thousands of students. The app mainly

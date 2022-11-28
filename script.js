@@ -14,7 +14,8 @@ var projects = [
                 Kanbooks was built using the Readium framework to render EPUBs, Swift's NLP library, and
                 GoogleTranslate's API </li> </ul>`,
         image: 'image-kanbooks',
-        url: "./assets/kanbooks.gif"
+        url: "./assets/kanbooks.gif",
+        alt: "Animation showing how the interface highlights unknown words and the custom translation overlay"
     },
     {
         title: "NUDM Mobile",
@@ -23,7 +24,8 @@ var projects = [
             mainly involves an event management interface as well as a fundraising leaderboard.
             We are working with React Native and Firebase in an agile environment </p>`,
         image: "image-nudm",
-        url: "assets/nudm_leaderboard.png"
+        url: "assets/nudm_leaderboard.png",
+        alt: "NUDM fundraising leaderboard"
 
     },
     {
@@ -32,7 +34,8 @@ var projects = [
             Developed middle layer bit blitting functions to apply operations from source to destination boxes with enforced clipping regions and tiling; Implemented functions to draw pixels, lines, and polygons
             Interfaced with port mapped IO to develop a parallel port driver and wrote an interrupt handler to signal other requests     </p>`,
         image: "image-nautilus",
-        url: "./assets/nautilus.png"
+        url: "./assets/nautilus.png",
+        alt: ""
     }, 
     {
         title: "iPod Player UI",
@@ -40,7 +43,8 @@ var projects = [
         to create an accessibility focused iPod player. Front-end only
     </p>`,
         image: "image-ipod",
-        url: "./assets/ipod-ui.png"
+        url: "./assets/ipod-ui.png",
+        alt: "iPod with playback buttons and song progression state"
     },
     {
         title: "Big Marsh Air Q Sensors",
@@ -48,7 +52,8 @@ var projects = [
         3D modeled waterproof enclosure and a plan to implement the sensors throughout the park.
     </p>`,
         image: "image-airnote",
-        url: "./assets/airnote-enclosure-3d-printed.png"
+        url: "./assets/airnote-enclosure-3d-printed.png",
+        alt: "Air note air quality sensor covered by custom waterproof casing"
     },
     {
         title: "Flappy Bird ",
@@ -63,7 +68,8 @@ var projects = [
         description: `<p> I designed a fully functional Chess GUI in highschool using object oriented principles.
                     </p>`,
         image: "image-chess",
-        url: "./assets/chess.png"
+        url: "./assets/chess.png",
+        alt: "Chess board with black and white pieces"
     }
 
 
@@ -77,7 +83,7 @@ function createProjects(projects, parentSelector) {
             for (let project of projects) {
                 image_link = project.image ? `card-img ${project.image}` : ""
 
-                image_html = project.url ?  `<img class="card-img" src=${project.url}>` : "";
+                image_html = project.url ?  `<img class="card-img" src=${project.url} alt=${project.alt}>` : "";
                 html = `
                     <div>
                         ${image_html}
@@ -93,35 +99,27 @@ function createProjects(projects, parentSelector) {
                 let container = document.createElement("div");
                 container.className="card";
                 container.innerHTML = html;
-                container.tabIndex = projects.indexOf(project);
+                // container.tabIndex = projects.indexOf(project);
                 parent.append(container);
             }
         }
     }
 }
-//                     ${project.description}
-// Get the modal
-var modal = document.getElementById("myModal");
 
-// Get the button that opens the modal
-var btn = document.querySelector("btn");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+function navHighlight(elem, home, active) {
+    var url = location.href.split('/'),
+        loc = url[url.length -1],
+        link = document.querySelectorAll(elem);
+    for (var i = 0; i < link.length; i++) {
+        var path = link[i].href.split('/'),
+            page = path[path.length -1];
+        if (page == loc || page == home && loc == '') {
+            link[i].parentNode.className += ' ' + active;
+            document.body.className += ' ' + page.substr(0, page.lastIndexOf('.'));
+            }
+        }
+    }
+navHighlight('.top-nav a', 'index.html', 'current'); /* menu link selector, home page, highlight class */

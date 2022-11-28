@@ -7,7 +7,7 @@ navTemplate.innerHTML = `
         <li nav aria-current-page tabindex=0> <a href = "index.html"> Home</a></li>
         <li tabindex=1>  <a href = "projects.html">Projects</a> </li>
         <li tabindex=2> <a href = "./assets/resume.pdf">Resume</a> </li>
-        <li tabindex=4> <a href="index.html#contact-info"> Contact Info </a> </li>
+        <li id="contact-link" tabindex=4> <a href="index.html#contact-info" target="_blank"> Contact Info </a> </li>
     </ul>
 </nav>
 `
