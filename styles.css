@@ -1,124 +1,87 @@
+/* Main styling */
+main {
+  margin-top: 100px;
+  margin-left: 1rem;
+  /* margin: 1rem; */
+  background-size: cover;
+  background-position: center;
+  }
+
 main .page-wrapper {
   background-color: #AC92D4;
   background: linear-gradient(6.77deg, #AC92D4 -62.1%, #C5A2DB 4.93%, rgba(179, 160, 234, 0.572107) 32.21%, rgba(154, 158, 255, 0) 125.36%, #EFBBE8 125.38%), #FAFCFF;
 }
-h1 h2 h3 {
-  font-family: Arial, Helvetica, sans-serif;
+
+h1 h2 h3 p {
+  font-family:  sans-serif;
 }
+
 h1 {
   color: rgba(53, 57, 169, 0.748);
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
+p {
+  font-size: 20px;
+}
+
+.current {
+  background-color: #AC92D4;
+}
+
 #profile-image {
   float: right;
   margin-left: 2rem;
   margin-right: 2rem;
-  /* padding: 0 20px 20px 0; */
-  /* margin-left: 100px; */
   border-radius: 1rem;
 }
   
 /* nav component css */
 nav.top-nav {
-  background-color: #AC92D4;
-  background: linear-gradient(6.77deg, #AC92D4 -62.1%, #C5A2DB 4.93%, rgba(179, 160, 234, 0.572107) 32.21%, rgba(154, 158, 255, 0) 125.36%, #EFBBE8 125.38%), #FAFCFF;
+  background-color: white ;
+  /* #AC92D4 */
+  box-shadow: 0 0 10px 3px rgba(154, 150, 150, 0.428);
+  /* background: linear-gradient(6.77deg, #AC92D4 -62.1%, #C5A2DB 4.93%, rgba(179, 160, 234, 0.572107) 32.21%, rgba(154, 158, 255, 0) 125.36%, #EFBBE8 125.38%), #FAFCFF; */
   position: fixed;
   top: 0px;
   right: 0px;
-  left: 0px;
-
-  /* color: black;
-      border-bottom: .25em solid;  */
+  left: 0px;  /* display: flex;  justify-content: flex-end; */
+  margin-bottom: 20px;
 }
-
+#contact-link {
+  float: right;
+  margin-right: 20px;
+}
 nav [aria-current=page] {
   background-color: white;
   color: black;
   border-bottom: .25cm solid;
+  margin-bottom: 20px;
+  
 }
-
-
-main {
-  margin-top: 100px;
-  /* margin-left: 2cm; */
-}
-
 nav.top-nav li {
   display: inline-block;
   font-family: sans-serif;
   font-weight: bold;
-  margin: 5px;
+  margin-left: 20px;
+  /* margin-right: 20px; */
   user-select: none;
-}
 
+}
+nav.top-nav li a {
+  color: black;
+  text-decoration: none;
+}
 nav.top-nav li:hover {
   text-decoration: underline;
 }
-
 nav.top-nav ul {
   list-style: none;
+  padding: 0px;
 }
 
-nav.top-nav .pulldown-menu {
-  display: none;
-  position: absolute;
-  border: 1px solid white;
-  background-color: white;
-}
-
-nav.top-nav li:hover .pulldown-menu {
-  display: block;
-}
-
-
-
-p {
-  font-size: 20px;
-}
-
-/* modallss */
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-
-/* CARDSSSSSSSSSSSSSSSSSSSSSSs */
+/* Cards  */
 #card-container {
   display: flex;
   justify-content: center;
@@ -131,15 +94,8 @@ p {
   width: 300px;
   height: 375px;
   margin: 10px;
-  /* overflow: auto; */
   border-radius: 1rem;
   overflow:hidden;
-
-  /* border: 1px solid rgba(159, 144, 144, 0.4); */
-
-  /* -webkit-column-width: 300px; 
-  column-width: 300px; */
-  /* white-space: nowrap; */
 }
 
 .btn{
@@ -166,25 +122,6 @@ p {
     word-break: break-word;
     line-height: normal;
 } 
-.image-kanbooks {
-  background-image: url(./assets/kanbooks.gif);
-}
-.image-airnote {
-  background-image: url(./assets/airnote-enclosure-3d-printed.png);
-} 
-.image-chess{
-  background-image: url(./assets/chess.png);
-}
-.image-nudm {
-  background-image: url(./assets/Leaderboard\ Hi-Fi.png);
-}
-.image-ipod {
-  background-image: url(./assets/ipod-ui.png);
-
-}
-.image-nautilus {
-  background-image: url(./assets/nautilus.png);
-}
 
 .thumbnail {
   max-width: 100%;
