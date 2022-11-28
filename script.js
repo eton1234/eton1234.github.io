@@ -13,7 +13,8 @@ var projects = [
             <li>
                 Kanbooks was built using the Readium framework to render EPUBs, Swift's NLP library, and
                 GoogleTranslate's API </li> </ul>`,
-        image: 'image-kanbooks'
+        image: 'image-kanbooks',
+        url: "./assets/kanbooks.gif"
     },
     {
         title: "NUDM Mobile",
@@ -21,7 +22,8 @@ var projects = [
             app
             mainly involves an event management interface as well as a fundraising leaderboard.
             We are working with React Native and Firebase in an agile environment </p>`,
-        image: "image-nudm"
+        image: "image-nudm",
+        url: "assets/nudm_leaderboard.png"
 
     },
     {
@@ -29,34 +31,39 @@ var projects = [
         description:` <p> Devised request and response fragments to load pixels into a framebuffer for a DMA GPU device
             Developed middle layer bit blitting functions to apply operations from source to destination boxes with enforced clipping regions and tiling; Implemented functions to draw pixels, lines, and polygons
             Interfaced with port mapped IO to develop a parallel port driver and wrote an interrupt handler to signal other requests     </p>`,
-        image: "image-nautilus"
+        image: "image-nautilus",
+        url: "./assets/nautilus.png"
     }, 
     {
         title: "iPod Player UI",
         description: `<p> I incorporated W3C WCAG accessibility guidelines into my HTML/CSS formatting and JavaScript code
         to create an accessibility focused iPod player. Front-end only
     </p>`,
-        image: "image-ipod"
+        image: "image-ipod",
+        url: "./assets/ipod-ui.png"
     },
     {
-        title: "Big Marsh Air Quality Sensors",
+        title: "Big Marsh Air Q Sensors",
         description: ` <p> Recommended the best air quality sensor for Big Marsh Park, an outdoor park with spotty Wi-Fi access. Provided a 
         3D modeled waterproof enclosure and a plan to implement the sensors throughout the park.
     </p>`,
-        image: "image-airnote"
+        image: "image-airnote",
+        url: "./assets/airnote-enclosure-3d-printed.png"
     },
     {
         title: "Flappy Bird ",
         description: ` <p> Programmed Flappy Bird from scratch in C++ with GE211, a simple 2D game engine. Complete with
         score tracking, random column generation and lives. Follows MVC model
     </p>`,
-        image: null
+        image: null,
+        url: null
     },
     {
         title: "Chess",
         description: `<p> I designed a fully functional Chess GUI in highschool using object oriented principles.
                     </p>`,
-        image: "image-chess"
+        image: "image-chess",
+        url: "./assets/chess.png"
     }
 
 
@@ -69,13 +76,17 @@ function createProjects(projects, parentSelector) {
         if (projects instanceof Array) {
             for (let project of projects) {
                 image_link = project.image ? `card-img ${project.image}` : ""
+
+                image_html = project.url ?  `<img class="card-img" src=${project.url}>` : "";
                 html = `
-                    <div class= "${image_link}"></div>
+                    <div>
+                        ${image_html}
+                    </div>
                     <div class="card-text">
                     
                         <h1> ${project.title} </h1>
                        
-                        ${project.description}
+    
                         </div>
                     </div> 
                     `
@@ -88,7 +99,7 @@ function createProjects(projects, parentSelector) {
         }
     }
 }
-
+//                     ${project.description}
 // Get the modal
 var modal = document.getElementById("myModal");
 

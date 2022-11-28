@@ -10,30 +10,19 @@ h1 {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/* About page intro  */
-#intro {
-  display: inline-block;
-}
-
-#intro p {
-  text-align: left;
-  margin-top: 0px;
-}
 
 #profile-image {
   float: right;
-  text-align: left;
-  padding: 0 20px 20px 0;
-  margin-left: 100px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  /* padding: 0 20px 20px 0; */
+  /* margin-left: 100px; */
+  border-radius: 1rem;
 }
-
-.details {
-  text-align: left;
-}
+  
 /* nav component css */
 nav.top-nav {
   background-color: #AC92D4;
-
   background: linear-gradient(6.77deg, #AC92D4 -62.1%, #C5A2DB 4.93%, rgba(179, 160, 234, 0.572107) 32.21%, rgba(154, 158, 255, 0) 125.36%, #EFBBE8 125.38%), #FAFCFF;
   position: fixed;
   top: 0px;
@@ -136,13 +125,17 @@ p {
   flex-wrap: wrap;
 }
 .card {
-  background:#AC92D4;
+  /* background-color:#AC92D4;  */
+  background-color: white;
+  box-shadow: 0 0 10px 3px rgba(154, 150, 150, 0.428);
   width: 300px;
   height: 375px;
   margin: 10px;
   /* overflow: auto; */
-  border-radius: 15px;
+  border-radius: 1rem;
   overflow:hidden;
+
+  /* border: 1px solid rgba(159, 144, 144, 0.4); */
 
   /* -webkit-column-width: 300px; 
   column-width: 300px; */
@@ -157,8 +150,9 @@ p {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 300px;
   width: 300px;
+  height: 300px;
+  object-fit: cover;
 }
 .card-text {
   margin: 10px;
@@ -174,7 +168,6 @@ p {
 } 
 .image-kanbooks {
   background-image: url(./assets/kanbooks.gif);
-  border-radius: 10px;
 }
 .image-airnote {
   background-image: url(./assets/airnote-enclosure-3d-printed.png);
@@ -187,6 +180,7 @@ p {
 }
 .image-ipod {
   background-image: url(./assets/ipod-ui.png);
+
 }
 .image-nautilus {
   background-image: url(./assets/nautilus.png);
@@ -196,11 +190,12 @@ p {
   max-width: 100%;
   max-height: 100%;
   /* object-fit:cover; */
-  max-height: 270px;
-  border-radius: 10px;
+  /* max-height: 270px; */
+  border-radius: 1rem;
+  border: 2px solid black;
 }
 
 .details {
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
