@@ -1,3 +1,65 @@
+/* header */
+#showcase {
+  background-image: url(assets/bienen-blue.jpeg);
+  margin-top: 50px;
+  /* height: 100vh;
+  width: 100vw; */
+  max-height: 100%;
+  max-width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-items: center;
+}
+#picture {
+  background-image: url(assets/bienen-blue.jpeg);
+  filter: blur(1);
+  /* z-index: 1; */
+  /* height: 100vh;
+  width: 100vw; */
+  max-height: 100%;
+  max-width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+#profile-image {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  /* border-radius: 1rem; */
+  border-radius: 50%;
+}
+#showcase h1 {
+  text-align: center;
+  font-size: xx-large;
+  background-color: white;
+  border-radius: 40px;
+  padding: 10px;
+}
+#showcase p {
+  color: white;
+}
+#showcase-2 {
+  background-image: url(assets/deering.jpeg);
+  /* margin-top: 50px; */
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+}
+#bio {
+  color: white;
+  position: absolute;
+  max-width: 70vw;
+  max-height: 80vh;
+  left: 50px;
+  font-size: larger;
+}
+#bio h1 {
+  color: rgba(214, 214, 244, 0.928);
+}
+
+
 /* Main styling */
 main {
   margin-top: 100px;
@@ -12,34 +74,37 @@ main .page-wrapper {
   background: linear-gradient(6.77deg, #AC92D4 -62.1%, #C5A2DB 4.93%, rgba(179, 160, 234, 0.572107) 32.21%, rgba(154, 158, 255, 0) 125.36%, #EFBBE8 125.38%), #FAFCFF;
 }
 
-h1 h2 h3 p {
-  font-family:  sans-serif;
+body {
+  font-family: 'Work Sans', sans-serif;
+ }
+ 
+h1 h2 h3 h4 h5 h6 p {
+  font-family: 'Crimson Text', serif;
+  
 }
 
 h1 {
-  color: rgba(53, 57, 169, 0.748);
+  /* color: rgba(53, 57, 169, 0.748); */
+  color: black;
   margin-top: 20px;
   margin-bottom: 20px;
+  font-size: xx-large;
 }
 
 p {
-  font-size: 20px;
+  font-size: larger;
 }
 
 .current {
   background-color: #AC92D4;
 }
 
-#profile-image {
-  float: right;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  border-radius: 1rem;
-}
+
   
 /* nav component css */
 nav.top-nav {
   background-color: white ;
+  z-index: 1;
   /* #AC92D4 */
   box-shadow: 0 0 10px 3px rgba(154, 150, 150, 0.428);
   /* background: linear-gradient(6.77deg, #AC92D4 -62.1%, #C5A2DB 4.93%, rgba(179, 160, 234, 0.572107) 32.21%, rgba(154, 158, 255, 0) 125.36%, #EFBBE8 125.38%), #FAFCFF; */
@@ -55,9 +120,11 @@ nav.top-nav {
 }
 nav [aria-current=page] {
   background-color: white;
-  color: black;
+  color: red;
   border-bottom: .25cm solid;
   margin-bottom: 20px;
+  z-index: 100;
+
   
 }
 nav.top-nav li {
@@ -67,6 +134,7 @@ nav.top-nav li {
   margin-left: 20px;
   /* margin-right: 20px; */
   user-select: none;
+  
 
 }
 nav.top-nav li a {
@@ -83,8 +151,12 @@ nav.top-nav ul {
 
 /* Cards  */
 #card-container {
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 1fr 1fr 1fr;
+  grid-gap: 1em; */
   display: flex;
-  justify-content: center;
+  justify-content: first baseline;
   flex-wrap: wrap;
 }
 .card {
@@ -97,7 +169,19 @@ nav.top-nav ul {
   border-radius: 1rem;
   overflow:hidden;
 }
-
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0.5);
+}
+.card h1 {
+  font-size: 22px;
+}
 .btn{
   background:none;
   border:none;
