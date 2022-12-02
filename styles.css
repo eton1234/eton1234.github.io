@@ -1,67 +1,59 @@
 /* header */
-#showcase {
-  background-image: url(assets/bienen-blue.jpeg);
-  margin-top: 50px;
-  /* height: 100vh;
-  width: 100vw; */
-  max-height: 100%;
-  max-width: 100%;
-  background-size: cover;
-  background-position: center;
-  display: grid;
-  place-items: center;
-}
-#picture {
-  background-image: url(assets/bienen-blue.jpeg);
-  filter: blur(1);
-  /* z-index: 1; */
-  /* height: 100vh;
-  width: 100vw; */
-  max-height: 100%;
-  max-width: 100%;
-  background-size: cover;
-  background-position: center;
+body, html {
+  margin: 0px;
 }
 
+.showcase {
+  margin: 0px;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+#deering-page {
+  background-image: url(assets/deering.jpeg);
+}
+#bienen-page {
+  margin-top: 50px;
+  display: grid;
+  place-items: center;
+  z-index: 10;
+  background-image: url(assets/bienen-blue.jpeg);
+}
 #profile-image {
   margin-left: 2rem;
   margin-right: 2rem;
-  /* border-radius: 1rem; */
   border-radius: 50%;
 }
-#showcase h1 {
+#bienen-page h1 {
   text-align: center;
   font-size: xx-large;
   background-color: white;
   border-radius: 40px;
-  padding: 10px;
 }
-#showcase p {
+#bienen-page p {
   color: white;
 }
-#showcase-2 {
-  background-image: url(assets/deering.jpeg);
-  /* margin-top: 50px; */
-  height: 100vh;
-  width: 100vw;
-  background-size: cover;
-  background-position: center;
-}
+/* within the deering-page */
 #bio {
   color: white;
-  position: absolute;
+  background-color:rgba(0, 0, 0, 0.7);
   max-width: 70vw;
-  max-height: 80vh;
-  left: 50px;
+  padding: 50px;
   font-size: larger;
+  border-radius: 20px;
+  /* margin-bottom: 70vh; */
 }
 #bio h1 {
   color: rgba(214, 214, 244, 0.928);
+  margin: 0px;
+  margin-bottom: 10px;
+}
+#bio p {
+  margin:0px;
 }
 
-
 /* Main styling */
-main {
+#page-wrapper {
   margin-top: 100px;
   margin-left: 1rem;
   /* margin: 1rem; */
@@ -69,10 +61,6 @@ main {
   background-position: center;
   }
 
-main .page-wrapper {
-  background-color: #AC92D4;
-  background: linear-gradient(6.77deg, #AC92D4 -62.1%, #C5A2DB 4.93%, rgba(179, 160, 234, 0.572107) 32.21%, rgba(154, 158, 255, 0) 125.36%, #EFBBE8 125.38%), #FAFCFF;
-}
 
 body {
   font-family: 'Work Sans', sans-serif;
@@ -80,7 +68,6 @@ body {
  
 h1 h2 h3 h4 h5 h6 p {
   font-family: 'Crimson Text', serif;
-  
 }
 
 h1 {
@@ -90,9 +77,13 @@ h1 {
   margin-bottom: 20px;
   font-size: xx-large;
 }
+h2 {
+  margin: 20px;
+}
 
 p {
   font-size: larger;
+  margin: 20px; 
 }
 
 .current {
@@ -216,7 +207,4 @@ nav.top-nav ul {
   border: 2px solid black;
 }
 
-.details {
-  /* overflow: hidden; */
-}
 
