@@ -1,7 +1,8 @@
 
 
-var projects = [
+let projects = [
     {
+        id: 0,
         title: "Kan Books",
         description: `<ul> <li>Trying to read in a foreign language like Chinese is a tough task.
             Besides memorizing the thousands of characters that exist, it is a confusing task to figure out which characters in a sequence
@@ -18,6 +19,7 @@ var projects = [
         alt: "Animation showing how the interface highlights unknown words and the custom translation overlay"
     },
     {
+        id: 1,
         title: "NUDM Mobile",
         description: `<p> With NUDM, I'm developing a client facing mobile app which serves thousands of students. The
             app
@@ -29,6 +31,7 @@ var projects = [
 
     },
     {
+        id: 2,
         title: "Nautilus Kernel Drivers",
         description:` <p> Devised request and response fragments to load pixels into a framebuffer for a DMA GPU device
             Developed middle layer bit blitting functions to apply operations from source to destination boxes with enforced clipping regions and tiling; Implemented functions to draw pixels, lines, and polygons
@@ -38,6 +41,7 @@ var projects = [
         alt: ""
     }, 
     {
+        id: 3,
         title: "iPod Player UI",
         description: `<p> I incorporated W3C WCAG accessibility guidelines into my HTML/CSS formatting and JavaScript code
         to create an accessibility focused iPod player. Front-end only
@@ -47,6 +51,7 @@ var projects = [
         alt: "iPod with playback buttons and song progression state"
     },
     {
+        id: 4,
         title: "Big Marsh Air Q Sensors",
         description: ` <p> Recommended the best air quality sensor for Big Marsh Park, an outdoor park with spotty Wi-Fi access. Provided a 
         3D modeled waterproof enclosure and a plan to implement the sensors throughout the park.
@@ -56,6 +61,7 @@ var projects = [
         alt: "Air note air quality sensor covered by custom waterproof casing"
     },
     {
+        id: "5",
         title: "Flappy Bird ",
         description: ` <p> Programmed Flappy Bird from scratch in C++ with GE211, a simple 2D game engine. Complete with
         score tracking, random column generation and lives. Follows MVC model
@@ -64,6 +70,7 @@ var projects = [
         url: null
     },
     {
+        id: "6",
         title: "Chess",
         description: `<p> I designed a fully functional Chess GUI in highschool using object oriented principles.
                     </p>`,
@@ -71,9 +78,6 @@ var projects = [
         url: "./assets/chess.png",
         alt: "Chess board with black and white pieces"
     }
-
-
-
 ]
 
 function createProjects(projects, parentSelector) {
@@ -81,21 +85,22 @@ function createProjects(projects, parentSelector) {
     if (parent) {
         if (projects instanceof Array) {
             for (let project of projects) {
-                image_link = project.image ? `card-img ${project.image}` : ""
-
+                
                 image_html = project.url ?  `<img class="card-img" src=${project.url} alt=${project.alt}>` : "";
                 html = `
-                    <div>
-                        ${image_html}
-                    </div>
-                    <div class="card-text">
-                    
-                        <h1> ${project.title} </h1>
-                       
-    
+                    <button id="button-${project.id}">
+                        <div>
+                            ${image_html}
                         </div>
-                    </div> 
-                    `
+                        <div class="card-text">
+                        
+                            <h1> ${project.title} </h1>
+                            
+                        
+        
+                            </div>
+                        </div> 
+                    </button> `
                 let container = document.createElement("div");
                 container.className="card";
                 container.innerHTML = html;
@@ -107,7 +112,45 @@ function createProjects(projects, parentSelector) {
 }
 
 
+function modals(projects, parentSelector) {
+    // Get the button that opens the modal
+    if (projects instanceof Array) {
+        for (let project of projects) {
+            console.log(`"${project.title}"`);
+            var btn = document.getElementById(`button-${project.id}`);
+            var modal = document.getElementById("myModal");
+            var span = document.getElementsByClassName("close")[0];
+            var modalContent = document.getElementById("woo");
+            btn.onclick =  () => {
+                modal.style.display = "grid";
+                console.log("what's up");
+               // document.getElementsByClassName("modal-content")[0].insertAdjacentHTML("beforeend",`
+                //document.getElementsByClassName("close")[0].innerHTML;
+                document.getElementById("modal-description").innerHTML= `${project.description}`;
+                document.getElementById("modal-title").innerHTML = `${project.title}`;
+                let image_link = project.image ? `card-img ${project.image}` : "";
+                modal_img = document.getElementById("modal-img");
+                modal_img.src = project.url;
+                modal_img.className = "card-img"
 
+            }
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                  modal.style.display = "none";
+                }
+              }
+            span.onclick = function() {
+            modal.style.display = "none";
+            }
+        }
+        var btn = document.getElementById("myBtn");
+        console.log(btn);
+    }
+    // Get the <span> element that closes the modal
+    // var span = document.getElementsByClassName("close")[0];
+
+
+}
 
 function navHighlight(elem, home, active) {
     var url = location.href.split('/'),
