@@ -69,13 +69,14 @@ body, html {
 body {
   font-family: 'Work Sans', sans-serif;
  }
- 
+
 h1 h2 h3 h4 h5 h6 p {
   font-family: 'Crimson Text', serif;
+  
 }
 
 h1 {
-  /* color: rgba(53, 57, 169, 0.748); */
+  color: rgba(53, 57, 169, 0.748);
   color: black;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -93,8 +94,12 @@ p {
 .current {
   background-color: #AC92D4;
 }
-
-
+#activities {
+  margin: 20px;
+}
+#nudm-image {
+  margin: 20px;
+}
   
 /*NAV COMPONENT * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * **/
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * **/
@@ -137,9 +142,7 @@ nav.top-nav li a {
   color: black;
   text-decoration: none;
 }
-button:hover {
-  text-decoration: underline;
-}
+
 nav.top-nav li:hover {
   text-decoration: underline;
 }
@@ -171,6 +174,9 @@ nav.top-nav ul {
 }
 #mybtn {
   background-color: white;
+}
+button:hover {
+  text-decoration: underline;
 }
 button, input[type="submit"], input[type="reset"] {
 	background: none;
@@ -270,4 +276,30 @@ button, input[type="submit"], input[type="reset"] {
   border: 2px solid black;
 }
 
+/*Footer  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * **/
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * **/
+footer {
+  margin: 20px;
+}
+#contact-info-container {
+  display: flex;
+}
 
+#calender {
+  display: grid;
+  place-content: center;
+}
+#contact-info-main {
+  text-align: justify;
+  margin: 20px;
+  /* font-size: 20px; */
+}
+#contact-info-main p {
+  float: center;
+  display: inline;
+  text-align: center;
+  /* font-size: inherit; */
+}
+#contact-info-main a {
+  margin-right: 10px;
+}

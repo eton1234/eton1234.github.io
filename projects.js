@@ -88,7 +88,8 @@ function createProjects(projects, parentSelector) {
                 
                 image_html = project.url ?  `<img class="card-img" src=${project.url} alt=${project.alt}>` : "";
                 html = `
-                    <button id="button-${project.id}">
+                   
+                    <div class="card">
                         <div>
                             ${image_html}
                         </div>
@@ -100,9 +101,10 @@ function createProjects(projects, parentSelector) {
         
                             </div>
                         </div> 
-                    </button> `
-                let container = document.createElement("div");
-                container.className="card";
+                    </div> `
+                    // <button id="button-${project.id}">
+                let container = document.createElement("button");
+                container.id=`button-${project.id}`;
                 container.innerHTML = html;
                 // container.tabIndex = projects.indexOf(project);
                 parent.append(container);
@@ -116,16 +118,13 @@ function modals(projects, parentSelector) {
     // Get the button that opens the modal
     if (projects instanceof Array) {
         for (let project of projects) {
-            console.log(`"${project.title}"`);
             var btn = document.getElementById(`button-${project.id}`);
             var modal = document.getElementById("myModal");
             var span = document.getElementsByClassName("close")[0];
-            var modalContent = document.getElementById("woo");
             btn.onclick =  () => {
                 modal.style.display = "grid";
-                console.log("what's up");
-               // document.getElementsByClassName("modal-content")[0].insertAdjacentHTML("beforeend",`
-                //document.getElementsByClassName("close")[0].innerHTML;
+
+                    
                 document.getElementById("modal-description").innerHTML= `${project.description}`;
                 document.getElementById("modal-title").innerHTML = `${project.title}`;
                 let image_link = project.image ? `card-img ${project.image}` : "";
