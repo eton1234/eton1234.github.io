@@ -3,12 +3,12 @@ navTemplate.innerHTML = `
 <link rel="stylesheet" href="styles.css">
 
 <nav role="navigation" class="top-nav">
-    <ul>
-        <li tabindex=0> <a role="button" aria-label="Home" href = "index.html"> Home</a></li>
-        <li tabindex=1>  <a role="button" href = "projects.html">Projects</a> </li>
-        <li tabindex=2> <a role="button" href = "./assets/resume.pdf">Resume</a> </li>
-        <li id="contact-link" tabindex=3> <a role="button" href="index.html#contact-info" target="_blank"> Contact Info </a> </li>
-    </ul>
+<ul>
+    <li aria-current="page"> <a role="button" aria-label="Home" href = "index.html"> Home</a></li>
+    <li>  <a role="button" href = "projects.html">Projects</a> </li>
+    <li> <a role="button" href = "./assets/resume.pdf" target="_blank">Resume</a> </li>
+    <li id="contact-link"> <a role="button" href="index.html#contact-info" target="_blank"> Contact Info </a> </li>
+</ul>
 </nav>
 `
 

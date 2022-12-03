@@ -1,9 +1,3 @@
-let previousElement;
-var addESC = function(e) {
-    if (e.keyCode == 27) {
-        closeDialog();
-    } 
-}
 let projects = [
     {
         id: 0,
@@ -52,7 +46,7 @@ let projects = [
     </p>`,
         image: "image-ipod",
         url: "./assets/ipod-ui.png",
-        alt: "iPod with playback buttons and song progression state"
+        alt: " iPod with playback buttons and song progression state"
     },
     {
         id: 4,
@@ -83,7 +77,6 @@ let projects = [
         alt: "Chess board with black and white pieces"
     }
 ]
-
 function createProjects(projects, parentSelector) {
     let parent = document.querySelector(parentSelector);
     if (parent) {
@@ -93,17 +86,15 @@ function createProjects(projects, parentSelector) {
                 image_html = project.url ?  `<img class="card-img" src=${project.url} alt=${project.alt}>` : "";
                 //Card's html
                 html = `
-                    <div class="card">
                         <div>
                             ${image_html}
                         </div>
                         <div class="card-text">
                             <h1> ${project.title} </h1>   
-                        </div>
-                    </div> 
-                    </div> `;
+                        </div>`;
                 let container = document.createElement("button");
                 container.id=`button-${project.id}`;
+                container.className = "card";
                 container.innerHTML = html;
                 parent.append(container);
             }
@@ -111,23 +102,30 @@ function createProjects(projects, parentSelector) {
     }
 }
 
-//accessibility for dialog 
+//close modal_dialog helper function
 function closeDialog() {
     var modal_dialog = document.getElementById("myModal");
     modal_dialog.removeAttribute('data-open');
-    
-    // document.getElementById('cover').style.display = 'none';
     modal_dialog.style.display = "none";
-    // Array.from(document.body.children).forEach(child => {
-    //     if(child !== modal_dialog) {
-    //         child.inert = false;
-    //     }
-    // });
+    Array.from(document.body.children).forEach(child => {
+        if(child !== modal_dialog) {
+            child.inert = false;
+        }
+    });
     document.removeEventListener('keydown', addESC);
     previousElement.focus();
     
     
   }
+//keeps track of the previous element
+let previousElement;
+//escape -> close the modal :  helper function 
+var addESC = function(e) {
+    if (e.keyCode == 27) {
+        closeDialog();
+    } 
+}
+
 //creates a modal display for every project button
 function modals(projects, parentSelector) {
     var close_button = document.getElementById("close");
@@ -141,14 +139,12 @@ function modals(projects, parentSelector) {
                 //Reveals and centers the modal 
                 previousElement = document.activeElement;
                 modal_dialog.style.display = "grid";
-                
                 //save the previous element and render the elements as inert
-            
-                // Array.from(document.body.children).forEach(child => {
-                //     if(child !== modal_dialog) {
-                //         child.inert = true;
-                //     }
-                // })
+                Array.from(document.body.children).forEach(child => {
+                    if(child !== modal_dialog) {
+                        child.inert = true;
+                    }
+                })
                 //grabs the correct elements and replaces the inner HTML
                 title = document.getElementById("modal-title")
                 title.innerHTML = `${project.title}`;
@@ -159,50 +155,26 @@ function modals(projects, parentSelector) {
                     modal_img.src = project.url;
                     modal_img.alt= project.alt;
                 }
-                
-                //listen for close button
-                modal_dialog.setAttribute('data-open', '');
+                //focus on the close button
                 close_button.focus();
-
+                //close modal listeners
+                modal_dialog.setAttribute('data-open', '');
                 modal_dialog.addEventListener('keydown', function(e) {
                   if (e.keyCode == 9) {
                     e.preventDefault();
                   }
                 });
-                // document.getElementById('cover').style.display = 'block';    
                 document.addEventListener('keydown', addESC);
 
             }
             window.onclick = function(event) {
                 if (event.target == modal_dialog) {
-                    console.log("yo");
                     closeDialog();
                 }
               }
             close_button.onclick = function() {
-                console.log("close button clicked");
                 closeDialog();
             }
         }
-
     }
-    // Get the <span> element that closes the modal
-    // var span = document.getElementsByClassName("close")[0];
-
-
 }
-
-function navHighlight(elem, home, active) {
-    var url = location.href.split('/'),
-        loc = url[url.length -1],
-        link = document.querySelectorAll(elem);
-    for (var i = 0; i < link.length; i++) {
-        var path = link[i].href.split('/'),
-            page = path[path.length -1];
-        if (page == loc || page == home && loc == '') {
-            link[i].parentNode.className += ' ' + active;
-            document.body.className += ' ' + page.substr(0, page.lastIndexOf('.'));
-            }
-        }
-    }
-navHighlight('.top-nav a', 'index.html', 'current'); /* menu link selector, home page, highlight class */

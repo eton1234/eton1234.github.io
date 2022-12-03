@@ -10,37 +10,39 @@
     <!-- copied from https://github.com/Bloggify/github-calendar -->
     <script
     src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js">
-  </script>
+     </script>
   
-    <link
-    rel="stylesheet"
-    href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
-  />
+    <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <noscript>
         <link rel="stylesheet" href="assets/css/noscript.css" />
     </noscript>
 </head>
 
 
-
+<header>
+    <nav role="navigation" class="top-nav">
+        <ul>
+            <li id="home-link" > <a role="button" aria-label="Home" href = "index.html"> Home</a></li>
+            <li aria-current="page">  <a role="button" href = "projects.html">Projects</a> </li>
+            <li> <a role="button" href = "./assets/resume.pdf" target="_blank">Resume</a> </li>
+            <li id="contact-link"> <a role="button" href="index.html#contact-info" target="_blank"> Contact Info </a> </li>
+        </ul>
+    </nav>
+</header>
 <body>
-    <nav-component></nav-component>
     <main id="page-wrapper">
         <h1 id="project-section"> Projects </h1>
+        <!-- github calendar widget -->
         <div aria-label="Extranous github calendar visualization"class="calendar">
-            <!-- Loading stuff -->
             Loading the data just for you.
         </div>
-
-        <section id="card-container" aria-labelledby="project-section">
-        </section>
-
-
+        <!-- Project cards  -->
+        <section id="card-container" aria-labelledby="project-section"> </section>
         <script>
             GitHubCalendar(".calendar", "eton1234");
             // or enable responsive functionality:
             GitHubCalendar(".calendar", "eton1234", { responsive: true });
-        
             // Use a proxy
             GitHubCalendar(".calendar", "eton1234", {
                proxy (username) {
@@ -49,12 +51,13 @@
             })
         </script>
     </main>
+    <!-- The currently hidden project description modal -->
     <div id="myModal" role="dialog" aria-labelledby="modal-description" class="modal">
-            
         <div class="modal-content" >
-            
             <img id="modal-img" class="card-img">             
-            <button  aria-label="close window" id="close">&times;</button>    
+            <button  aria-label="close window" id="close"><span class="material-symbols-outlined">
+                close
+                </span> </button>    
             <div  class="card-text">
                 <h1 id="modal-title" aria-live="polite">  </h1>
                 <p id="modal-description" aria-live="polite"> </p>
@@ -63,6 +66,7 @@
     </div>
 </body>
 <script>
+    // scripts to show the modal
     createProjects(projects,"#card-container");
     modals(projects);
 </script>

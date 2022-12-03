@@ -42,7 +42,6 @@ body, html {
   padding: 50px;
   font-size: larger;
   border-radius: 20px;
-  /* margin-bottom: 70vh; */
 }
 #bio h1 {
   color: rgba(214, 214, 244, 0.928);
@@ -60,7 +59,6 @@ body, html {
 #page-wrapper {
   margin-top: 100px;
   margin-left: 1rem;
-  /* margin: 1rem; */
   background-size: cover;
   background-position: center;
   }
@@ -69,12 +67,8 @@ body, html {
 body {
   font-family: 'Work Sans', sans-serif;
  }
- button:focus {
-  background: red;
-}
 h1 h2 h3 h4 h5 h6 p {
   font-family: 'Crimson Text', serif;
-  
 }
 
 h1 {
@@ -108,34 +102,22 @@ p {
 nav.top-nav {
   background-color: white ;
   z-index: 1;
-  /* #AC92D4 */
   box-shadow: 0 0 10px 3px rgba(154, 150, 150, 0.428);
-  /* background: linear-gradient(6.77deg, #AC92D4 -62.1%, #C5A2DB 4.93%, rgba(179, 160, 234, 0.572107) 32.21%, rgba(154, 158, 255, 0) 125.36%, #EFBBE8 125.38%), #FAFCFF; */
   position: fixed;
   top: 0px;
   right: 0px;
-  left: 0px;  /* display: flex;  justify-content: flex-end; */
+  left: 0px;
   margin-bottom: 20px;
 }
 #contact-link {
   float: right;
   margin-right: 20px;
 }
-nav [aria-current=page] {
-  background-color: white;
-  color: red;
-  border-bottom: .25cm solid;
-  margin-bottom: 20px;
-  z-index: 100;
-
-  
-}
 nav.top-nav li {
   display: inline-block;
   font-family: sans-serif;
   font-weight: bold;
   margin-left: 20px;
-  /* margin-right: 20px; */
   user-select: none;
   
 
@@ -156,16 +138,11 @@ nav.top-nav ul {
 /*CARD * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * **/
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * **/
 #card-container {
-  /* display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-auto-rows: 1fr 1fr 1fr;
-  grid-gap: 1em; */
   display: flex;
   justify-content: first baseline;
   flex-wrap: wrap;
 }
-.card {
-  /* background-color:#AC92D4;  */
+.card{
   background-color: white;
   box-shadow: 0 0 10px 3px rgba(154, 150, 150, 0.428);
   width: 300px;
@@ -179,6 +156,7 @@ nav.top-nav ul {
 }
 button:hover {
   text-decoration: underline;
+  box-shadow: 0 0 20px 3px rgba(154, 150, 150, 0.95);
 }
 button, input[type="submit"], input[type="reset"] {
 	background: none;
@@ -186,7 +164,6 @@ button, input[type="submit"], input[type="reset"] {
 	border: none;
 	padding: 0;
 	font: inherit;
-	/* cursor: pointer; */
 	outline: inherit;
 }
 /*MODAL  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * **/
@@ -201,18 +178,18 @@ button, input[type="submit"], input[type="reset"] {
   width: 100%;
   overflow: auto;
   background-color: currentcolor;
-  /* opacity: 0.3; */
   background-color: rgba(0,0,0,0.2); 
 
 }
 #close {
-  color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
+  border-radius: 1px;
+  padding: 5px;
 }
-.close:hover,
-.close:focus {
+
+#close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
@@ -228,9 +205,8 @@ button, input[type="submit"], input[type="reset"] {
   z-index: 3;
   background-color: white;
   position: relative;
-  /* background-color: #fefefe; */
   margin: auto;
-  padding: 0;
+  padding: 10px;
   border: 1px solid #888;
   width: 80%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
@@ -263,21 +239,13 @@ button, input[type="submit"], input[type="reset"] {
 }
 .description p {
   text-overflow: clip;
-  /* text-align: justify; */
-    justify-content:left;
-    word-wrap: break-word;
-    word-break: break-word;
-    line-height: normal;
+  justify-content:left;
+  word-wrap: break-word;
+  word-break: break-word;
+  line-height: normal;
 } 
 
-.thumbnail {
-  max-width: 100%;
-  max-height: 100%;
-  /* object-fit:cover; */
-  /* max-height: 270px; */
-  border-radius: 1rem;
-  border: 2px solid black;
-}
+
 
 /*Footer  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * **/
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * **/
@@ -295,13 +263,11 @@ footer {
 #contact-info-main {
   text-align: justify;
   margin: 20px;
-  /* font-size: 20px; */
 }
 #contact-info-main p {
   float: center;
   display: inline;
   text-align: center;
-  /* font-size: inherit; */
 }
 #contact-info-main a {
   margin-right: 10px;
