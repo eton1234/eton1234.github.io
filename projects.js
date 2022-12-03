@@ -1,5 +1,9 @@
 
-
+var addESC = function(e) {
+    if (e.keyCode == 27) {
+    closeDialog();
+    } 
+}
 let projects = [
     {
         id: 0,
@@ -112,7 +116,15 @@ function createProjects(projects, parentSelector) {
         }
     }
 }
-
+function closeDialog() {
+    var dialog = document.getElementById("myModal");
+    dialog.removeAttribute('data-open');
+    // document.focus();      
+    // document.getElementById('cover').style.display = 'none';
+    var modal = document.getElementById("myModal");
+    modal.style.display ="none";
+    document.removeEventListener('keydown', addESC);
+  }
 //creates a modal display for every project button
 function modals(projects, parentSelector) {
 
@@ -133,7 +145,20 @@ function modals(projects, parentSelector) {
                 modal_img = document.getElementById("modal-img");
                 modal_img.src = project.url;
                 modal_img.alt= project.alt;
-                modal_img.className = "card-img"
+                modal_img.className = "card-img";
+                //making it more accessiblee
+                var dialog = document.getElementById("myModal");
+                    dialog.setAttribute('data-open', '');
+                this.focus();
+
+
+                this.addEventListener('keydown', function(e) {
+                  if (e.keyCode == 9) {
+                    e.preventDefault();
+                  }
+                });
+                // document.getElementById('cover').style.display = 'block';    
+                document.addEventListener('keydown', addESC);
 
             }
             window.onclick = function(event) {
