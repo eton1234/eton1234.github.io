@@ -38,7 +38,7 @@ let projects = [
             Interfaced with port mapped IO to develop a parallel port driver and wrote an interrupt handler to signal other requests     </p>`,
         image: "image-nautilus",
         url: "./assets/nautilus.png",
-        alt: ""
+        alt: "Nautilus logo"
     }, 
     {
         id: 3,
@@ -113,23 +113,26 @@ function createProjects(projects, parentSelector) {
     }
 }
 
-
+//creates a modal display for every project button
 function modals(projects, parentSelector) {
-    // Get the button that opens the modal
+
     if (projects instanceof Array) {
         for (let project of projects) {
+            //Grabs button modal, and span
             var btn = document.getElementById(`button-${project.id}`);
             var modal = document.getElementById("myModal");
             var span = document.getElementsByClassName("close")[0];
+            //Custom button onclick added
             btn.onclick =  () => {
+                //Centers the modal
                 modal.style.display = "grid";
-
-                    
+                //grabs the correct elements and replaces the inner HTML
                 document.getElementById("modal-description").innerHTML= `${project.description}`;
                 document.getElementById("modal-title").innerHTML = `${project.title}`;
                 let image_link = project.image ? `card-img ${project.image}` : "";
                 modal_img = document.getElementById("modal-img");
                 modal_img.src = project.url;
+                modal_img.alt= project.alt;
                 modal_img.className = "card-img"
 
             }
