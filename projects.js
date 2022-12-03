@@ -116,10 +116,12 @@ function createProjects(projects, parentSelector) {
         }
     }
 }
+
+//accessibility for dialog 
 function closeDialog() {
     var dialog = document.getElementById("myModal");
     dialog.removeAttribute('data-open');
-    // document.focus();      
+    document.getElementById("card-container").focus();      
     // document.getElementById('cover').style.display = 'none';
     var modal = document.getElementById("myModal");
     modal.style.display ="none";
