@@ -69,7 +69,9 @@ body, html {
 body {
   font-family: 'Work Sans', sans-serif;
  }
-
+ button:focus {
+  background: red;
+}
 h1 h2 h3 h4 h5 h6 p {
   font-family: 'Crimson Text', serif;
   
@@ -203,7 +205,7 @@ button, input[type="submit"], input[type="reset"] {
   background-color: rgba(0,0,0,0.2); 
 
 }
-.close {
+#close {
   color: #aaa;
   float: right;
   font-size: 28px;
@@ -239,6 +241,7 @@ button, input[type="submit"], input[type="reset"] {
   margin: 0px;
   padding: 0px;
 }
+
 .card h1 {
   font-size: 22px;
 }

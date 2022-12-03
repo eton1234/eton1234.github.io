@@ -11,6 +11,7 @@
     <script
     src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js">
   </script>
+  
     <link
     rel="stylesheet"
     href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
@@ -36,11 +37,12 @@
         <div id="myModal" role="dialog" aria-labelledby="modal-description" class="modal">
             
             <div class="modal-content" >
-                <span class="close">&times;</span>    
-                <img id="modal-img">             
+                
+                <img id="modal-img" class="card-img">             
+                <button  aria-label="close window" id="close">&times;</button>    
                 <div  class="card-text">
-                    <h1 id="modal-title">  </h1>
-                    <p id="modal-description"> </p>
+                    <h1 id="modal-title" aria-live="polite">  </h1>
+                    <p id="modal-description" aria-live="polite"> </p>
                 </div>
             </div>
         </div>

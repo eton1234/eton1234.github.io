@@ -1,4 +1,4 @@
-
+let previousElement;
 var addESC = function(e) {
     if (e.keyCode == 27) {
     closeDialog();
@@ -66,7 +66,7 @@ let projects = [
     },
     {
         id: "5",
-        title: "Flappy Bird ",
+        title: "Flappy Bird",
         description: ` <p> Programmed Flappy Bird from scratch in C++ with GE211, a simple 2D game engine. Complete with
         score tracking, random column generation and lives. Follows MVC model
     </p>`,
@@ -89,28 +89,22 @@ function createProjects(projects, parentSelector) {
     if (parent) {
         if (projects instanceof Array) {
             for (let project of projects) {
-                
+                //creates html for the custom image of the card
                 image_html = project.url ?  `<img class="card-img" src=${project.url} alt=${project.alt}>` : "";
+                //Card's html
                 html = `
-                   
                     <div class="card">
                         <div>
                             ${image_html}
                         </div>
                         <div class="card-text">
-                        
-                            <h1> ${project.title} </h1>
-                            
-                        
-        
-                            </div>
-                        </div> 
-                    </div> `
-                    // <button id="button-${project.id}">
+                            <h1> ${project.title} </h1>   
+                        </div>
+                    </div> 
+                    </div> `;
                 let container = document.createElement("button");
                 container.id=`button-${project.id}`;
                 container.innerHTML = html;
-                // container.tabIndex = projects.indexOf(project);
                 parent.append(container);
             }
         }
@@ -121,40 +115,52 @@ function createProjects(projects, parentSelector) {
 function closeDialog() {
     var dialog = document.getElementById("myModal");
     dialog.removeAttribute('data-open');
-    document.getElementById("card-container").focus();      
+    previousElement.focus();      
     // document.getElementById('cover').style.display = 'none';
     var modal = document.getElementById("myModal");
-    modal.style.display ="none";
+    modal.style.display = "none";
+    Array.from(document.body.children).forEach(child => {
+        if(child != modal_dialog) {
+            child.inert = false;
+        }
+    })
     document.removeEventListener('keydown', addESC);
+    
   }
 //creates a modal display for every project button
 function modals(projects, parentSelector) {
-
+    close_button = document.getElementById("close");
     if (projects instanceof Array) {
         for (let project of projects) {
             //Grabs button modal, and span
             var btn = document.getElementById(`button-${project.id}`);
-            var modal = document.getElementById("myModal");
+            var modal_dialog = document.getElementById("myModal");
             var span = document.getElementsByClassName("close")[0];
             //Custom button onclick added
             btn.onclick =  () => {
-                //Centers the modal
-                modal.style.display = "grid";
+                //Reveals and centers the modal 
+                modal_dialog.style.display = "grid";
+                
+                //save the previous element and render the elements as inert
+                previousElement = document.activeElement;
+                Array.from(document.body.children).forEach(child => {
+                    if(child != modal_dialog) {
+                        child.inert = true;
+                    }
+                })
                 //grabs the correct elements and replaces the inner HTML
+                title = document.getElementById("modal-title")
+                title.innerHTML = `${project.title}`;
                 document.getElementById("modal-description").innerHTML= `${project.description}`;
-                document.getElementById("modal-title").innerHTML = `${project.title}`;
-                let image_link = project.image ? `card-img ${project.image}` : "";
                 modal_img = document.getElementById("modal-img");
                 modal_img.src = project.url;
                 modal_img.alt= project.alt;
-                modal_img.className = "card-img";
-                //making it more accessiblee
-                var dialog = document.getElementById("myModal");
-                    dialog.setAttribute('data-open', '');
-                this.focus();
+                
+                //listen for close button
+                modal_dialog.setAttribute('data-open', '');
+                close_button.focus();
 
-
-                this.addEventListener('keydown', function(e) {
+                modal_dialog.addEventListener('keydown', function(e) {
                   if (e.keyCode == 9) {
                     e.preventDefault();
                   }
@@ -166,14 +172,15 @@ function modals(projects, parentSelector) {
             window.onclick = function(event) {
                 if (event.target == modal) {
                   modal.style.display = "none";
+                  closeDialog();
                 }
               }
-            span.onclick = function() {
-            modal.style.display = "none";
+            close_button.onclick = function() {
+                modal.style.display = "none";
+                closeDialog();
             }
         }
-        var btn = document.getElementById("myBtn");
-        console.log(btn);
+
     }
     // Get the <span> element that closes the modal
     // var span = document.getElementsByClassName("close")[0];
