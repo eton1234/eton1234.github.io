@@ -1,7 +1,7 @@
 let previousElement;
 var addESC = function(e) {
     if (e.keyCode == 27) {
-    closeDialog();
+        closeDialog();
     } 
 }
 let projects = [
@@ -113,48 +113,52 @@ function createProjects(projects, parentSelector) {
 
 //accessibility for dialog 
 function closeDialog() {
-    var dialog = document.getElementById("myModal");
-    dialog.removeAttribute('data-open');
-    previousElement.focus();      
+    var modal_dialog = document.getElementById("myModal");
+    modal_dialog.removeAttribute('data-open');
+    
     // document.getElementById('cover').style.display = 'none';
-    var modal = document.getElementById("myModal");
-    modal.style.display = "none";
-    Array.from(document.body.children).forEach(child => {
-        if(child != modal_dialog) {
-            child.inert = false;
-        }
-    })
+    modal_dialog.style.display = "none";
+    // Array.from(document.body.children).forEach(child => {
+    //     if(child !== modal_dialog) {
+    //         child.inert = false;
+    //     }
+    // });
     document.removeEventListener('keydown', addESC);
+    previousElement.focus();
+    
     
   }
 //creates a modal display for every project button
 function modals(projects, parentSelector) {
-    close_button = document.getElementById("close");
+    var close_button = document.getElementById("close");
     if (projects instanceof Array) {
         for (let project of projects) {
             //Grabs button modal, and span
             var btn = document.getElementById(`button-${project.id}`);
             var modal_dialog = document.getElementById("myModal");
-            var span = document.getElementsByClassName("close")[0];
             //Custom button onclick added
             btn.onclick =  () => {
                 //Reveals and centers the modal 
+                previousElement = document.activeElement;
                 modal_dialog.style.display = "grid";
                 
                 //save the previous element and render the elements as inert
-                previousElement = document.activeElement;
-                Array.from(document.body.children).forEach(child => {
-                    if(child != modal_dialog) {
-                        child.inert = true;
-                    }
-                })
+            
+                // Array.from(document.body.children).forEach(child => {
+                //     if(child !== modal_dialog) {
+                //         child.inert = true;
+                //     }
+                // })
                 //grabs the correct elements and replaces the inner HTML
                 title = document.getElementById("modal-title")
                 title.innerHTML = `${project.title}`;
                 document.getElementById("modal-description").innerHTML= `${project.description}`;
                 modal_img = document.getElementById("modal-img");
-                modal_img.src = project.url;
-                modal_img.alt= project.alt;
+                //if the image exists add it
+                if (project.url) {
+                    modal_img.src = project.url;
+                    modal_img.alt= project.alt;
+                }
                 
                 //listen for close button
                 modal_dialog.setAttribute('data-open', '');
@@ -170,13 +174,13 @@ function modals(projects, parentSelector) {
 
             }
             window.onclick = function(event) {
-                if (event.target == modal) {
-                  modal.style.display = "none";
-                  closeDialog();
+                if (event.target == modal_dialog) {
+                    console.log("yo");
+                    closeDialog();
                 }
               }
             close_button.onclick = function() {
-                modal.style.display = "none";
+                console.log("close button clicked");
                 closeDialog();
             }
         }

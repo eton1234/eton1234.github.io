@@ -34,18 +34,7 @@
 
         <section id="card-container" aria-labelledby="project-section">
         </section>
-        <div id="myModal" role="dialog" aria-labelledby="modal-description" class="modal">
-            
-            <div class="modal-content" >
-                
-                <img id="modal-img" class="card-img">             
-                <button  aria-label="close window" id="close">&times;</button>    
-                <div  class="card-text">
-                    <h1 id="modal-title" aria-live="polite">  </h1>
-                    <p id="modal-description" aria-live="polite"> </p>
-                </div>
-            </div>
-        </div>
+
 
         <script>
             GitHubCalendar(".calendar", "eton1234");
@@ -57,15 +46,24 @@
                proxy (username) {
                  return fetch(`https://your-proxy.com/github?user=${username}`)
                }
-            }).then(r => r.text())
+            })
         </script>
-
-        </div>
     </main>
+    <div id="myModal" role="dialog" aria-labelledby="modal-description" class="modal">
+            
+        <div class="modal-content" >
+            
+            <img id="modal-img" class="card-img">             
+            <button  aria-label="close window" id="close">&times;</button>    
+            <div  class="card-text">
+                <h1 id="modal-title" aria-live="polite">  </h1>
+                <p id="modal-description" aria-live="polite"> </p>
+            </div>
+        </div>
+    </div>
 </body>
 <script>
     createProjects(projects,"#card-container");
     modals(projects);
 </script>
-<script src="modal.js"></script>
 </html>
