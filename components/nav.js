@@ -6,8 +6,7 @@ navTemplate.innerHTML = `
 <ul>
     <li aria-current="page"> <a role="button" aria-label="Home" href = "index.html"> Home</a></li>
     <li>  <a role="button" href = "projects.html">Projects</a> </li>
-    <li> <a role="button" href = "./assets/resume.pdf" target="_blank">Resume</a> </li>
-    <li id="contact-link"> <a role="button" href="index.html#contact-info" target="_blank"> Contact Info </a> </li>
+    <li id="contact-link"> <a role="button" href="index.html#contact-info"> Contact Info </a> </li>
 </ul>
 </nav>
 `

@@ -39,8 +39,10 @@ body, html {
   color: white;
   background-color:rgba(0, 0, 0, 0.7);
   max-width: 70vw;
-  padding: 50px;
-  font-size: larger;
+  padding: 10px;
+  padding-left: 30px;
+  padding-top: 30px;
+  font-size:medium;
   border-radius: 20px;
 }
 #bio h1 {
@@ -49,7 +51,8 @@ body, html {
   margin-bottom: 10px;
 }
 #bio p {
-  margin:0px;
+  margin-top:10px;
+  margin-left: 0px;
 }
 /*MAIN  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * **/
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * **/
@@ -63,7 +66,13 @@ body, html {
   background-position: center;
   }
 
-
+#page-wrapper h1 a:hover {
+  box-shadow: 0 0 20px 3px rgba(154, 150, 150, 0.95);
+}
+#page-wrapper h1 a {
+  text-decoration: none;
+  color: black;
+}
 body {
   font-family: 'Work Sans', sans-serif;
  }
@@ -83,8 +92,9 @@ h2 {
 }
 
 p {
-  font-size: larger;
+  font-size: large;
   margin: 20px; 
+
 }
 
 .current {
@@ -108,10 +118,6 @@ nav.top-nav {
   right: 0px;
   left: 0px;
   margin-bottom: 20px;
-}
-#contact-link {
-  float: right;
-  margin-right: 20px;
 }
 nav.top-nav li {
   display: inline-block;
@@ -156,6 +162,7 @@ nav.top-nav ul {
 }
 button:hover {
   text-decoration: underline;
+  cursor: pointer;
   box-shadow: 0 0 20px 3px rgba(154, 150, 150, 0.95);
 }
 button, input[type="submit"], input[type="reset"] {
@@ -252,23 +259,19 @@ button, input[type="submit"], input[type="reset"] {
 footer {
   margin: 20px;
 }
-#contact-info-container {
+#contact-info-container ul {
   display: flex;
+  align-items: center;
+  list-style: none;
+  margin-left: 0px;
+  margin-top: 0px;
+  padding-left: 0px;
 }
-
-#calender {
-  display: grid;
-  place-content: center;
+#contact-info-container li {
+  margin: 10px;
 }
-#contact-info-main {
-  text-align: justify;
-  margin: 20px;
-}
-#contact-info-main p {
-  float: center;
-  display: inline;
-  text-align: center;
-}
-#contact-info-main a {
-  margin-right: 10px;
+#links-container {
+  height: 30px;
+  width: 30px;
+  padding: 0px;
 }

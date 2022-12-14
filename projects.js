@@ -12,7 +12,6 @@ let projects = [
             <li>
                 Kanbooks was built using the Readium framework to render EPUBs, Swift's NLP library, and
                 GoogleTranslate's API </li> </ul>`,
-        image: 'image-kanbooks',
         url: "./assets/kanbooks.gif",
         alt: "Animation showing how the interface highlights unknown words and the custom translation overlay"
     },
@@ -23,7 +22,6 @@ let projects = [
             app
             mainly involves an event management interface as well as a fundraising leaderboard.
             We are working with React Native and Firebase in an agile environment </p>`,
-        image: "image-nudm",
         url: "assets/nudm_leaderboard.png",
         alt: "NUDM fundraising leaderboard"
 
@@ -34,7 +32,6 @@ let projects = [
         description:` <p> Devised request and response fragments to load pixels into a framebuffer for a DMA GPU device
             Developed middle layer bit blitting functions to apply operations from source to destination boxes with enforced clipping regions and tiling; Implemented functions to draw pixels, lines, and polygons
             Interfaced with port mapped IO to develop a parallel port driver and wrote an interrupt handler to signal other requests     </p>`,
-        image: "image-nautilus",
         url: "./assets/nautilus.png",
         alt: "Nautilus logo"
     }, 
@@ -44,7 +41,6 @@ let projects = [
         description: `<p> I incorporated W3C WCAG accessibility guidelines into my HTML/CSS formatting and JavaScript code
         to create an accessibility focused iPod player. Front-end only
     </p>`,
-        image: "image-ipod",
         url: "./assets/ipod-ui.png",
         alt: " iPod with playback buttons and song progression state"
     },
@@ -54,7 +50,6 @@ let projects = [
         description: ` <p> Recommended the best air quality sensor for Big Marsh Park, an outdoor park with spotty Wi-Fi access. Provided a 
         3D modeled waterproof enclosure and a plan to implement the sensors throughout the park.
     </p>`,
-        image: "image-airnote",
         url: "./assets/airnote-enclosure-3d-printed.png",
         alt: "Air note air quality sensor covered by custom waterproof casing"
     },
@@ -65,7 +60,8 @@ let projects = [
         score tracking, random column generation and lives. Follows MVC model
     </p>`,
         image: null,
-        url: null
+        url: "./assets/flappy-bird.jpeg",
+        alt: "Bird flying through column obstacles"
     },
     {
         id: "6",
@@ -104,7 +100,7 @@ function createProjects(projects, parentSelector) {
 
 //close modal_dialog helper function
 function closeDialog() {
-    var modal_dialog = document.getElementById("myModal");
+    let modal_dialog = document.getElementById("myModal");
     modal_dialog.removeAttribute('data-open');
     modal_dialog.style.display = "none";
     Array.from(document.body.children).forEach(child => {
@@ -120,7 +116,7 @@ function closeDialog() {
 //keeps track of the previous element
 let previousElement;
 //escape -> close the modal :  helper function 
-var addESC = function(e) {
+let addESC = function(e) {
     if (e.keyCode == 27) {
         closeDialog();
     } 
@@ -128,12 +124,12 @@ var addESC = function(e) {
 
 //creates a modal display for every project button
 function modals(projects, parentSelector) {
-    var close_button = document.getElementById("close");
+    let close_button = document.getElementById("close");
     if (projects instanceof Array) {
         for (let project of projects) {
             //Grabs button modal, and span
-            var btn = document.getElementById(`button-${project.id}`);
-            var modal_dialog = document.getElementById("myModal");
+            let btn = document.getElementById(`button-${project.id}`);
+            let modal_dialog = document.getElementById("myModal");
             //Custom button onclick added
             btn.onclick =  () => {
                 //Reveals and centers the modal 
