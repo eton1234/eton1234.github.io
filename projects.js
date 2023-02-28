@@ -30,13 +30,22 @@ let projects = [
         id: 2,
         title: "Nautilus Kernel Drivers",
         description:` <p> Devised request and response fragments to load pixels into a framebuffer for a DMA GPU device
-            Developed middle layer bit blitting functions to apply operations from source to destination boxes with enforced clipping regions and tiling; Implemented functions to draw pixels, lines, and polygons
-            Interfaced with port mapped IO to develop a parallel port driver and wrote an interrupt handler to signal other requests     </p>`,
+        Developed middle layer bit blitting functions to apply operations from source to destination boxes with enforced clipping regions and tiling; Implemented functions to draw pixels, lines, and polygons
+        Interfaced with port mapped IO to develop a parallel port driver and wrote an interrupt handler to signal other requests
+        </p>`,
         url: "./assets/nautilus.png",
         alt: "Nautilus logo"
     }, 
     {
         id: 3,
+        title: "DAQ Motion board",
+        description:` <p> Wrote and tested ESP32 firmware in C++ to relay GPS and IMU data through CAN bus, providing valuable
+         real-time car information to the driver and telemetry subteam </p>`,
+        url: "./assets/ESP32.jpg",
+        alt: "Daq Motion PCB board"
+    }, 
+    {
+        id: 4,
         title: "iPod Player UI",
         description: `<p> I incorporated W3C WCAG accessibility guidelines into my HTML/CSS formatting and JavaScript code
         to create an accessibility focused iPod player. Front-end only
@@ -45,7 +54,7 @@ let projects = [
         alt: " iPod with playback buttons and song progression state"
     },
     {
-        id: 4,
+        id: 5,
         title: "Big Marsh Air Q Sensors",
         description: ` <p> Recommended the best air quality sensor for Big Marsh Park, an outdoor park with spotty Wi-Fi access. Provided a 
         3D modeled waterproof enclosure and a plan to implement the sensors throughout the park.
@@ -54,7 +63,7 @@ let projects = [
         alt: "Air note air quality sensor covered by custom waterproof casing"
     },
     {
-        id: "5",
+        id: 6,
         title: "Flappy Bird",
         description: ` <p> Programmed Flappy Bird from scratch in C++ with GE211, a simple 2D game engine. Complete with
         score tracking, random column generation and lives. Follows MVC model
@@ -64,7 +73,7 @@ let projects = [
         alt: "Bird flying through column obstacles"
     },
     {
-        id: "6",
+        id: 7,
         title: "Chess",
         description: `<p> I designed a fully functional Chess GUI in highschool using object oriented principles.
                     </p>`,
